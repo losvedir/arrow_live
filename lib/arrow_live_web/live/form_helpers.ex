@@ -28,7 +28,8 @@ defmodule ArrowLiveWeb.FormHelpers do
 
   def date_picker(assigns) do
     ~H"""
-    <input type="date" />
+
+    <input class="date-picker-component" />
     """
   end
 end

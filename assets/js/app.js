@@ -16,6 +16,9 @@ import "phoenix_html"
 import {Socket} from "phoenix"
 import topbar from "topbar"
 import {LiveSocket} from "phoenix_live_view"
+import DatePicker from "react-datepicker"
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
@@ -34,3 +37,15 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+function TestComponent(props) {
+  return React.createElement("div", {}, "some contents");
+}
+
+document.querySelectorAll(".date-picker-component").forEach(dpc => {
+  console.log(dpc);
+  ReactDOM.render(React.createElement(TestComponent, {}, null), dpc);
+})
+
+window.TestComponent = TestComponent;
+window.React = React;
+window.ReactDOM = ReactDOM;
