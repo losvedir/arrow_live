@@ -13,6 +13,7 @@
     "react": "^17.0.2",
     "react-datepicker": "^4.1.1",
     "react-dom": "^17.0.2",
+    "react-phoenix": "file:../deps/react_phoenix",
     "topbar": "^0.1.4"
   },
   "devDependencies": {

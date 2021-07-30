@@ -13,6 +13,7 @@ import "../css/app.scss"
 //     import socket from "./socket"
 //
 import "phoenix_html"
+import "react-phoenix"
 import {Socket} from "phoenix"
 import topbar from "topbar"
 import {LiveSocket} from "phoenix_live_view"
@@ -38,7 +39,8 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 function TestComponent(props) {
-  return React.createElement("div", {}, "some contents");
+  const [startDate, setStartDate] = React.useState(new Date());
+  return React.createElement(DatePicker, {selected: startDate, onChange: (date) => setStartDate(date), name: "datepicker-comp"});
 }
 
 document.querySelectorAll(".date-picker-component").forEach(dpc => {
@@ -49,3 +51,7 @@ document.querySelectorAll(".date-picker-component").forEach(dpc => {
 window.TestComponent = TestComponent;
 window.React = React;
 window.ReactDOM = ReactDOM;
+window.Components = {
+  DatePicker,
+  TestComponent
+}

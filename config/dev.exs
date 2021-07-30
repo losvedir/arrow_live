@@ -4,7 +4,7 @@ use Mix.Config
 config :arrow_live, ArrowLive.Repo,
   username: "postgres",
   password: "postgres",
-  database: "arrow_live_dev",
+  database: "arrow_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

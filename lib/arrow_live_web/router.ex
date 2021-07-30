@@ -18,7 +18,9 @@ defmodule ArrowLiveWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
-    live "/disruptions/new", DisruptionLive, :new
+    get "/disruptions", DisruptionController, :index
+    get "/disruptions/new", DisruptionController, :new
+    live "/disruptions/new_live", DisruptionLive, :new
   end
 
   # Other scopes may use custom stacks.
